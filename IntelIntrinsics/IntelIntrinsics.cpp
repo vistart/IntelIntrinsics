@@ -132,6 +132,10 @@ int main()
 	sum = accumulate(duration.begin(), duration.end(), 0.0);
 	mean = sum / times;
 	acc = 0;
+	for_each(duration.begin(), duration.end(), [&](const double d)
+	{
+		acc += (d - mean) * (d - mean);
+	});
 	cout << "avx512:\n" << "result: " << result3 << endl << "mean: " << mean << endl << "stdev: " << sqrt(acc / times) << endl;
 	cout << endl;
 #endif
