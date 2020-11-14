@@ -120,7 +120,7 @@ int main()
 	});
 	cout << "avx256:\n" << "result: " << result2 << endl << "mean: " << mean << endl << "stdev: " << sqrt(acc / times) << endl;
 #endif
-#ifdef __AVX512__
+#ifdef __AVX512F__
 	//avx512计时
 	for (int i = 0; i < times; i++)
 	{
